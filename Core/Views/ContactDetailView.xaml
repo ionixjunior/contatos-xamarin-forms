@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Core.Views.ContactDetailView"
+		Title="Detalhes"
+>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Salvar" Command="{Binding SaveCommand}"></ToolbarItem>
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.Content>
+		<TableView Intent="Form">
+			<TableView.Root>
+				<TableSection Title="Informações básicas">
+					<EntryCell Label="Nome" Text="{Binding Data.Name}"></EntryCell>
+					<EntryCell Label="Profissão" Text="{Binding Data.Profession}"></EntryCell>
+					<EntryCell Label="Cidade" Text="{Binding Data.City}"></EntryCell>
+				</TableSection>
+			</TableView.Root>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>

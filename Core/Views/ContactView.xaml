@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Core.Views.ContactView"
+		Title="Contatos"
+>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Adicionar" Command="{Binding GotoDetailCommand}"></ToolbarItem>
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.Content>
+		<StackLayout>
+			<SearchBar 
+				Placeholder="Pesquise pelo nome" 
+				SearchCommand="{Binding SearchCommand}"
+				Text="{Binding SearchText}"
+			></SearchBar>
+			
+			<ListView ItemsSource="{Binding Data}" HasUnevenRows="true" ItemTapped="OnTapped">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="15, 5">
+								<Label Text="{Binding Name}"></Label>
+								<Label Text="{Binding Profession}"></Label>
+								<Label Text="{Binding City}"></Label>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
